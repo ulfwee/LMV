@@ -1,0 +1,17 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd lab6/first-app
+        - npm ci
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: lab6/first-app/dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - lab6/first-app/node_modules/**/*
